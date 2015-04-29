@@ -1,19 +1,21 @@
-var Hello = ReactMeteor.createClass({
-    templateName: "hello",
+var Iro = ReactMeteor.createClass({
+    templateName: "Iro",
 
     getMeteorState: function() {
         return {
-            title: "try React",
-            greeting: "hello"
+            title: "Hello React"
         }
     },
 
     render: function() {
         return (
-            <section className="hello">
-                <div className="container">
-                    <h1>{this.state.title}</h1>
-                    <p>{this.state.greeting}</p>
+            <section className="row">
+                <div className="col s1">
+                    <div className="card-panel blue">
+                        <span className="white-text">
+                            {this.state.title}
+                        </span>
+                    </div>
                 </div>
             </section>
         )
