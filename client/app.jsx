@@ -1,16 +1,16 @@
-var New = ReactMeteor.createClass({
+const New = ReactMeteor.createClass({
     templateName: "New",
 
-    handleSubmit: function(e) {
+    handleSubmit: e => {
         var content = React.findDOMNode(this.refs.iroContent).value.trim()
         Iros.insert({ content: content, createdAt: new Date()});
     },
 
-    results: function() {
+    results: () => {
         return Iros.find({}, {sort: {createdAt: -1}});
     },
 
-    render: function() {
+    render: () => {
         return (
             <div className="row">
                 <form className="col s12" onSubmit={this.handleSubmit}>
@@ -33,10 +33,10 @@ var New = ReactMeteor.createClass({
     }
 });
 
-var IroIro = ReactMeteor.createClass({
+const IroIro = ReactMeteor.createClass({
     templateName: "IroIro",
 
-    render: function() {
+    render: () => {
         return (
             <section className="iroiro">
             </section>
@@ -44,16 +44,16 @@ var IroIro = ReactMeteor.createClass({
     }
 });
 
-var Iro = ReactMeteor.createClass({
+const Iro = ReactMeteor.createClass({
     templateName: "Iro",
 
-    getMeteorState: function() {
+    getMeteorState: () => {
         return {
             title: "Hello React"
         }
     },
 
-    render: function() {
+    render: () => {
         return (
             <div className="col s1">
                 <div className="card-panel blue">
