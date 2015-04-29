@@ -1,3 +1,36 @@
+Iros = new Meteor.Collection("iros");
+
+var New = ReactMeteor.createClass({
+    templateName: "New",
+
+    render: function() {
+        return (
+            <div className="row">
+                <form className="col s12">
+                    <div className="row">
+                        <div className="input-field col s12">
+                            <i className="mdi-editor-mode-edit prefix"></i>
+                            <textarea id="iro_content" className="materialize-textarea"></textarea>
+                            <label for="iro_content">Message</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        );
+    }
+});
+
+var IroIro = ReactMeteor.createClass({
+    templateName: "IroIro",
+
+    render: function() {
+        return (
+            <section className="iroiro">
+            </section>
+        );
+    }
+});
+
 var Iro = ReactMeteor.createClass({
     templateName: "Iro",
 
@@ -9,15 +42,13 @@ var Iro = ReactMeteor.createClass({
 
     render: function() {
         return (
-            <section className="row">
-                <div className="col s1">
-                    <div className="card-panel blue">
-                        <span className="white-text">
-                            {this.state.title}
-                        </span>
-                    </div>
+            <div className="col s1">
+                <div className="card-panel blue">
+                    <span className="white-text">
+                        {this.state.title}
+                    </span>
                 </div>
-            </section>
-        )
+            </div>
+        );
     }
 });
