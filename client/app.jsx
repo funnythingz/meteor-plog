@@ -1,23 +1,31 @@
-Iros = new Meteor.Collection("iros");
-
 var New = ReactMeteor.createClass({
     templateName: "New",
+
+    handleSubmit: function(e) {
+        e.preventDefault();
+        var content = React.findDOMNode(this.refs.iroContent).value.trim()
+        Iros.insert({ content: content, createdAt: new Date()});
+    },
+
+    results: function() {
+        return Iros.find({}, {sort: {createdAt: -1}});
+    },
 
     render: function() {
         return (
             <div className="row">
-                <form className="col s12">
+                <form className="col s12" onSubmit={this.handleSubmit}>
                     <div className="row">
                         <div className="input-field col s10">
                             <i className="mdi-editor-mode-edit prefix"></i>
-                            <textarea id="iro_content" className="materialize-textarea" length="120"></textarea>
+                            <textarea id="iro_content" className="materialize-textarea" length="120" ref="iroContent"></textarea>
                             <label for="iro_content">Message</label>
                         </div>
                         <div className="input-field col s2">
-                            <div className="btn waves-effect waves-light">
+                            <button className="btn waves-effect waves-light" type="submit" name="action">
                                 Post
                                 <i className="mdi-content-send right"></i>
-                            </div>
+                            </button>
                         </div>
                     </div>
                 </form>
