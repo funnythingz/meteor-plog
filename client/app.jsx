@@ -2,7 +2,6 @@ var New = ReactMeteor.createClass({
     templateName: "New",
 
     handleSubmit: function(e) {
-        e.preventDefault();
         var content = React.findDOMNode(this.refs.iroContent).value.trim()
         Iros.insert({ content: content, createdAt: new Date()});
     },
