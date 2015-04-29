@@ -11,8 +11,10 @@ var Hello = ReactMeteor.createClass({
     render: function() {
         return (
             <section className="hello">
-                <h1>{this.state.title}</h1>
-                <p>{this.state.greeting}</p>
+                <div className="container">
+                    <h1>{this.state.title}</h1>
+                    <p>{this.state.greeting}</p>
+                </div>
             </section>
         )
     }
