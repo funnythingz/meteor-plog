@@ -43,7 +43,7 @@ const IroIro = ReactMeteor.createClass({
     render: function() {
         var iroiro = this.state.iroiro.map(function(iro) {
             return (
-                <p id={iro._id}>
+                <p id={iro._id} className="iro">
                     {iro.content}
                 </p>
             );
