@@ -44,7 +44,9 @@ const IroIro = ReactMeteor.createClass({
         var iroiro = this.state.iroiro.map(function(iro) {
             return (
                 <p id={iro._id} className="iro">
-                    {iro.content}
+                    <a href={"/iro/" + iro._id}>
+                        {iro.content}
+                    </a>
                 </p>
             );
         });
