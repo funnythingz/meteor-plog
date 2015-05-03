@@ -1,3 +1,5 @@
+@import 'compass/css3';
+
 .iro {
   margin: 5px;
   width: 100px;
@@ -6,6 +8,8 @@
   vertical-align: bottom;
   overflow: hidden;
   text-align: center;
+  background-color: #f7f8f9;
+  border-radius: 3px;
 
   a {
     width: 100px;
